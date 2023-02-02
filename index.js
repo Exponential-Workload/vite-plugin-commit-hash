@@ -1,4 +1,4 @@
-import {execSync} from 'child_process';
+const {execSync} = require('child_process');
 const getCommit = ()=>encodeURIComponent(execSync('git describe --long --always --dirty --abbrev=10000').toString().trim())
 let commit = getCommit();
 let commitExpires = Date.now() + 10000
