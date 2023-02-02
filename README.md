@@ -31,4 +31,6 @@ export default config;
 ```
 
 ## Attribution
+Developed by [@ExponentialWorkload](https://github.com/Exponential-Workload)<br/>
+Licensed under the [MIT License](./LICENSE)<br/>
 Slightly inspired by [vite-plugin-git-revision](https://github.com/qduld/vite-plugin-git-revision)

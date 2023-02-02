@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-commit-hash",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Exposes the current commit hash to the codebase",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -21,5 +21,13 @@
   },
   "peerDependencies": {
     "vite": ">=2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Exponential-Workload/vite-plugin-commit-hash.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Exponential-Workload/vite-plugin-commit-hash/issues"
+  },
+  "homepage": "https://github.com/Exponential-Workload/vite-plugin-commit-hash"
 }
