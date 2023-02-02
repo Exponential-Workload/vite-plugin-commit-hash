@@ -6,7 +6,7 @@ This should work cross-framework just fine.
 ## Installation
 
 1. `pnpm i vite-plugin-commit-hash`
-2. Load the plugin in your `vite.config.js`: `import CommitHashPlugin from 'vite-plugin-commit-hash';` followed by `plugins: [/*your other plugins*/, CommitHashPlugin({noPrefix:false,noVirtual:false})]`
+2. Load the plugin in your `vite.config.js`: `import {CommitHashPlugin} from 'vite-plugin-commit-hash';` followed by `plugins: [/*your other plugins*/, CommitHashPlugin({noPrefix:false,noVirtual:false})]`
 
 ## Usage
 Import `virtual:commit-hash` in your codebase;
