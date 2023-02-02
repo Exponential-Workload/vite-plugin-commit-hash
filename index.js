@@ -1,4 +1,3 @@
-// plugin
 import {execSync} from 'child_process';
 const getCommit = ()=>encodeURIComponent(execSync('git describe --long --always --dirty --abbrev=10000').toString().trim())
 let commit = getCommit();
@@ -13,7 +12,7 @@ const cachedCommitId = ()=>{
 	}
 	return commit
 }
-const plugin = (config={noPrefix:false,noVirtual:false}) => {
+export const CommitHashPlugin = (config={noPrefix:false,noVirtual:false}) => {
 	return {
 		name: 'ExponentialWorkload: Git Commit Hash',
 		transform: config.noPrefix ? undefined : (str,id) => {
@@ -37,3 +36,4 @@ const plugin = (config={noPrefix:false,noVirtual:false}) => {
     },
 	}
 }
+export default CommitHashPlugin
