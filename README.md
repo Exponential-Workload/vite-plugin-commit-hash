@@ -15,5 +15,20 @@ import CommitHash from 'virtual:commit-hash';
 console.log(CommitHash); // -> Current Hash - with '-dirty' at the end if there's uncommitted work.
 ```
 
-### Attribution
+### Example Config
+
+```js
+import { sveltekit } from '@sveltejs/kit/vite';
+import { CommitHashPlugin } from 'vite-plugin-commit-hash';
+import type { UserConfig } from 'vite';
+
+/** @type {import('vite').UserConfig} */
+const config: UserConfig = {
+	plugins: [sveltekit(), CommitHashPlugin({noPrefix:false,noVirtual:false})]
+};
+
+export default config;
+```
+
+## Attribution
 Slightly inspired by [vite-plugin-git-revision](https://github.com/qduld/vite-plugin-git-revision)
