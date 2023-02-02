@@ -14,3 +14,6 @@ Import `virtual:commit-hash` in your codebase;
 import CommitHash from 'virtual:commit-hash';
 console.log(CommitHash); // -> Current Hash - with '-dirty' at the end if there's uncommitted work.
 ```
+
+### Attribution
+Slightly inspired by [vite-plugin-git-revision](https://github.com/qduld/vite-plugin-git-revision)

@@ -1,4 +1,4 @@
-const {execSync} = require('child_process');
+import {execSync} from 'child_process';
 const getCommit = ()=>encodeURIComponent(execSync('git describe --long --always --dirty --abbrev=10000').toString().trim())
 let commit = getCommit();
 let commitExpires = Date.now() + 10000
@@ -25,15 +25,15 @@ export const CommitHashPlugin = (config={noPrefix:false,noVirtual:false}) => {
 			return str;
 		},
 		resolveId(id) {
-      if (!config.noVirtual && id === virtualModuleId) {
-        return resolvedVirtualModuleId
-      }
-    },
-    load(id) {
-      if (!config.noVirtual && id === resolvedVirtualModuleId) {
-        return `export const id = '${cachedCommitId()}';export default id;`
-      }
-    },
+			if (!config.noVirtual && id === virtualModuleId) {
+				return resolvedVirtualModuleId
+			}
+		},
+		load(id) {
+			if (!config.noVirtual && id === resolvedVirtualModuleId) {
+				return `export const id = '${cachedCommitId()}';export default id;`
+			}
+		},
 	}
 }
 export default CommitHashPlugin

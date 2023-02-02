@@ -2,11 +2,24 @@
   "name": "vite-plugin-commit-hash",
   "version": "1.0.0",
   "description": "Exposes the current commit hash to the codebase",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsup src/index.ts --dts --format cjs,esm"
   },
-  "keywords": ["vite-plugin"],
+  "keywords": [
+    "vite-plugin"
+  ],
   "author": "ExponentialWorkload",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "tsup": "^6.5.0",
+    "typescript": "^4.9.5",
+    "vite": "^4.1.1"
+  },
+  "peerDependencies": {
+    "vite": ">=2"
+  }
 }
