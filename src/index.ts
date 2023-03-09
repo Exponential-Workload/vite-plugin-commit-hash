@@ -1,15 +1,16 @@
 import { execSync } from 'child_process';
 import { existsSync } from 'fs';
 const getCommit = () => {
-  if (!existsSync('.git')) {
-    return '.git-not-found'
-  } else
-    try {
-      return encodeURIComponent(execSync('git describe --long --always --dirty --abbrev=10000').toString().trim())
-    } catch (error) {
+  try {
+    return encodeURIComponent(execSync('git describe --long --always --dirty --abbrev=10000').toString().trim())
+  } catch (error) {
+    if (!existsSync('.git')) {
+      return '.git-not-found'
+    } else {
       console.warn('nonfatal<git>: Git errored', error);
       return 'unknown-commit'
     }
+  }
 }
 let commit = getCommit();
 let commitExpires = Date.now() + 10000
