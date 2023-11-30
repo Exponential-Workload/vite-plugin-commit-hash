@@ -6,7 +6,9 @@
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsup src/index.ts --dts --format cjs,esm"
+    "build": "tsup src/index.ts --dts --format cjs,esm",
+    "prepublishOnly": "pnpm build",
+    "pub": "changeset version && git add . && git commit -m \"feat(rel): Release\" && git push && git push --tags"
   },
   "keywords": [
     "vite-plugin"
@@ -14,6 +16,8 @@
   "author": "ExponentialWorkload",
   "license": "MIT",
   "devDependencies": {
+    "@changesets/cli": "^2.27.1",
+    "@rollup/pluginutils": "^5.1.0",
     "@types/node": "^18.11.18",
     "tsup": "^6.5.0",
     "typescript": "^4.9.5",
@@ -29,5 +33,8 @@
   "bugs": {
     "url": "https://github.com/Exponential-Workload/vite-plugin-commit-hash/issues"
   },
-  "homepage": "https://github.com/Exponential-Workload/vite-plugin-commit-hash"
+  "homepage": "https://github.com/Exponential-Workload/vite-plugin-commit-hash",
+  "dependencies": {
+    "magic-string": "^0.30.5"
+  }
 }
