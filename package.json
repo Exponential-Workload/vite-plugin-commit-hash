@@ -7,8 +7,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsup src/index.ts --dts --format cjs,esm",
-    "prepublishOnly": "pnpm build",
-    "pub": "changeset version && git add . && git commit -m \"feat(rel): Release\" && git push && git push --tags"
+    "prepublishOnly": "changeset version && git add . && git commit -m \"feat(rel): Release\" && git push && git push --tags && pnpm build"
   },
   "keywords": [
     "vite-plugin"
