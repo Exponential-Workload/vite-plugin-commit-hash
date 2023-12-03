@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-commit-hash",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Exposes the current commit hash to the codebase",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
