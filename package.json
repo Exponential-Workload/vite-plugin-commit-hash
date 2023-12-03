@@ -45,5 +45,5 @@
     "@rollup/pluginutils": "^5.1.0",
     "magic-string": "^0.30.5"
   },
-  "sideEffects": false
+  "sideEffects": true
 }
