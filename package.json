@@ -9,6 +9,15 @@
     "build": "tsup src/index.ts --dts --format cjs,esm",
     "prepublishOnly": "changeset version && git add . && git commit -m \"feat(rel): Release\" && git push && git push --tags && pnpm build"
   },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "node": "./dist/index.mjs",
+      "default": "./dist/index.js"
+    }
+  },
   "keywords": [
     "vite-plugin"
   ],
@@ -35,5 +44,6 @@
   "dependencies": {
     "@rollup/pluginutils": "^5.1.0",
     "magic-string": "^0.30.5"
-  }
+  },
+  "sideEffects": false
 }
